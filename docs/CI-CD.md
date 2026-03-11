@@ -73,10 +73,25 @@ Nenhuma variável secreta necessária atualmente. O `GITHUB_TOKEN` é injetado a
 
 ### Troubleshooting
 
+**Erro 403: Permission Denied**
+```
+Permission to ... denied to github-actions[bot]
+The requested URL returned error: 403
+```
+
+**Solução:**
+1. GitHub → Settings → Actions → General
+2. Selecione: **"Read and write permissions"**
+3. Ativar: **"Allow GitHub Actions to create and approve pull requests"**
+4. Faça novo push para testar
+
+Ver arquivo: `FIX-PERMISSION-ERROR.md` para mais detalhes
+
 **Deploy não está funcionando?**
-- Verifique se `GITHUB_TOKEN` está habilitado nas settings
-- Confirm branch protection rules
-- Verifique logs em Actions
+- ☐ Workflow permissions: Read and write?
+- ☐ GitHub Pages settings: Ativa?
+- ☐ Branch protection rules: Permite CI?
+- ☐ Verifique logs em Actions
 
 **HTML Lint falhando?**
 - O workflow continua mesmo com falhas de lint
