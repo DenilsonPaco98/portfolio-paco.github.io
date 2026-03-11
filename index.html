@@ -637,6 +637,222 @@
       min-width: 80px;
     }
 
+    /* TRILHAS DE ESTUDO */
+    .study-trails {
+      margin-top: 100px;
+      padding-top: 100px;
+      border-top: 1px solid var(--border);
+    }
+
+    .study-trails-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 64px;
+      line-height: 1;
+    }
+
+    .trails-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 48px;
+      margin-bottom: 80px;
+    }
+
+    .trail-card {
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.03) 0%, rgba(255,107,53,0.02) 100%);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .trail-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .trail-card:hover {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(255,107,53,0.05) 100%);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,212,255,0.1);
+    }
+
+    .trail-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .trail-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .trail-icon {
+      font-size: 2.5rem;
+      min-width: 60px;
+    }
+
+    .trail-info h3 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .trail-info .trail-code {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .trail-level {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .trail-description {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .trail-modules {
+      background: rgba(17,17,17,0.5);
+      border-left: 3px solid var(--accent);
+      padding: 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .trail-modules h4 {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .modules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .module-item {
+      font-size: 0.75rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+    }
+
+    .module-item::before {
+      content: '▸';
+      color: var(--accent);
+      font-weight: bold;
+      min-width: 12px;
+    }
+
+    .trail-duration {
+      font-size: 0.7rem;
+      color: var(--muted);
+      padding: 12px;
+      background: rgba(255,107,53,0.05);
+      border-radius: 4px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .trail-difficulty {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 20px;
+      margin-top: 12px;
+    }
+
+    /* MAPA MENTAL */
+    .mental-map {
+      margin-top: 80px;
+      padding: 48px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.05) 0%, rgba(255,107,53,0.05) 100%);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .mental-map-title {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+
+    .map-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+
+    .map-node {
+      padding: 32px;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: rgba(0,212,255,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .map-node:hover {
+      background: rgba(0,212,255,0.15);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,212,255,0.3);
+    }
+
+    .map-node-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .map-node-title {
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .map-node-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
     /* CONTACT */
     .contact-grid {
       display: grid;
@@ -743,6 +959,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certificações</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#trails">Trilhas</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -1107,6 +1324,180 @@
 
 </section>
 
+<!-- TRILHAS DE ESTUDO -->
+<section id="trails">
+  <div class="section-label">// aprendizado</div>
+  <h2 class="section-title">Trilhas de<br>Estudo</h2>
+
+  <div class="trails-container">
+    
+    <!-- AWS Solutions Architect Associate -->
+    <div class="trail-card">
+      <div class="trail-header">
+        <div class="trail-icon">🏗️</div>
+        <div class="trail-info">
+          <div class="trail-level">Nível Associate</div>
+          <h3>Solutions Architect</h3>
+          <div class="trail-code">SAA-C03</div>
+        </div>
+      </div>
+      
+      <p class="trail-description">
+        Domine o design de arquiteturas resilientes na AWS. Aprenda a construir soluções escaláveis, seguras e eficientes.
+      </p>
+
+      <div class="trail-modules">
+        <h4>📚 Módulos Principais</h4>
+        <div class="modules-list">
+          <div class="module-item">EC2 & Compute Services</div>
+          <div class="module-item">VPC & Networking</div>
+          <div class="module-item">RDS & Databases</div>
+          <div class="module-item">S3 & Storage</div>
+          <div class="module-item">Lambda & Serverless</div>
+          <div class="module-item">Security & IAM</div>
+          <div class="module-item">Disaster Recovery</div>
+        </div>
+      </div>
+
+      <div class="trail-duration">⏱ 6-8 semanas | 40-50 horas</div>
+      <span class="trail-difficulty">✓ COMPLETADO</span>
+    </div>
+
+    <!-- AWS Cloud Practitioner -->
+    <div class="trail-card">
+      <div class="trail-header">
+        <div class="trail-icon">☁️</div>
+        <div class="trail-info">
+          <div class="trail-level">Nível Foundational</div>
+          <h3>Cloud Practitioner</h3>
+          <div class="trail-code">CLF-C02</div>
+        </div>
+      </div>
+      
+      <p class="trail-description">
+        Compreenda os fundamentos da computação em nuvem AWS. Perfeito para começar sua jornada na cloud.
+      </p>
+
+      <div class="trail-modules">
+        <h4>📚 Módulos Principais</h4>
+        <div class="modules-list">
+          <div class="module-item">Cloud Concepts</div>
+          <div class="module-item">AWS Services Overview</div>
+          <div class="module-item">Security Basics</div>
+          <div class="module-item">Pricing & Billing</div>
+          <div class="module-item">Architecture Principles</div>
+          <div class="module-item">Support & Resources</div>
+        </div>
+      </div>
+
+      <div class="trail-duration">⏱ 2-3 semanas | 15-20 horas</div>
+      <span class="trail-difficulty">✓ COMPLETADO</span>
+    </div>
+
+    <!-- AWS Machine Learning Associate -->
+    <div class="trail-card">
+      <div class="trail-header">
+        <div class="trail-icon">🤖</div>
+        <div class="trail-info">
+          <div class="trail-level">Nível Associate</div>
+          <h3>Machine Learning</h3>
+          <div class="trail-code">MLA-C01</div>
+        </div>
+      </div>
+      
+      <p class="trail-description">
+        Implemente e gerencie soluções de ML na AWS. Aprenda SageMaker, treinamento de modelos e deployment.
+      </p>
+
+      <div class="trail-modules">
+        <h4>📚 Módulos Principais</h4>
+        <div class="modules-list">
+          <div class="module-item">ML Fundamentals</div>
+          <div class="module-item">SageMaker Studio</div>
+          <div class="module-item">Data Preparation</div>
+          <div class="module-item">Model Training</div>
+          <div class="module-item">Hyperparameter Tuning</div>
+          <div class="module-item">Model Deployment</div>
+          <div class="module-item">Monitoring & Optimization</div>
+        </div>
+      </div>
+
+      <div class="trail-duration">⏱ 8-10 semanas | 50-60 horas</div>
+      <span class="trail-difficulty">✓ COMPLETADO</span>
+    </div>
+
+    <!-- AWS AI Practitioner -->
+    <div class="trail-card">
+      <div class="trail-header">
+        <div class="trail-icon">✨</div>
+        <div class="trail-info">
+          <div class="trail-level">Nível Foundational</div>
+          <h3>AI Practitioner</h3>
+          <div class="trail-code">AWS-AI-C01</div>
+        </div>
+      </div>
+      
+      <p class="trail-description">
+        Explore as capacidades de IA generativa da AWS. Integre modelos de IA em suas aplicações.
+      </p>
+
+      <div class="trail-modules">
+        <h4>📚 Módulos Principais</h4>
+        <div class="modules-list">
+          <div class="module-item">AI/ML Overview</div>
+          <div class="module-item">Amazon Bedrock</div>
+          <div class="module-item">Foundation Models</div>
+          <div class="module-item">Generative AI Applications</div>
+          <div class="module-item">Prompt Engineering</div>
+          <div class="module-item">RAG (Retrieval-Augmented)</div>
+          <div class="module-item">Responsible AI</div>
+        </div>
+      </div>
+
+      <div class="trail-duration">⏱ 4-6 semanas | 25-35 horas</div>
+      <span class="trail-difficulty">⏱ PRÓXIMO</span>
+    </div>
+
+  </div>
+
+  <!-- MAPA MENTAL -->
+  <div class="mental-map">
+    <h3 class="mental-map-title">🧠 Jornada AWS</h3>
+    <div class="map-container">
+      <div class="map-node">
+        <div class="map-node-icon">1️⃣</div>
+        <div class="map-node-title">Fundamentos</div>
+        <div class="map-node-desc">Cloud Practitioner<br>Básico</div>
+      </div>
+      
+      <div style="font-size: 2rem; color: var(--accent);">→</div>
+      
+      <div class="map-node">
+        <div class="map-node-icon">2️⃣</div>
+        <div class="map-node-title">Arquitetura</div>
+        <div class="map-node-desc">Solutions Architect<br>Intermediário</div>
+      </div>
+      
+      <div style="font-size: 2rem; color: var(--accent);">→</div>
+      
+      <div class="map-node">
+        <div class="map-node-icon">3️⃣</div>
+        <div class="map-node-title">Especialização</div>
+        <div class="map-node-desc">ML / Data / DevOps<br>Avançado</div>
+      </div>
+      
+      <div style="font-size: 2rem; color: var(--accent);">→</div>
+      
+      <div class="map-node">
+        <div class="map-node-icon">4️⃣</div>
+        <div class="map-node-title">IA Generativa</div>
+        <div class="map-node-desc">AI Practitioner<br>Novo</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 <!-- CONTACT -->
 <section id="contato">
   <div class="section-label">// contato</div>
@@ -1147,7 +1538,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.timeline-item, .skill-card, .cert-card, .roadmap-card').forEach((el, i) => {
+  document.querySelectorAll('.timeline-item, .skill-card, .cert-card, .roadmap-card, .trail-card').forEach((el, i) => {
     el.dataset.delay = (i % 4) * 100;
     observer.observe(el);
   });
