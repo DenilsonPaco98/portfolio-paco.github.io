@@ -473,6 +473,170 @@
       text-transform: uppercase;
     }
 
+    /* ROADMAP */
+    .roadmap-container {
+      margin-top: 80px;
+      padding-top: 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .roadmap-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+      line-height: 1;
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .roadmap-card {
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, background 0.2s;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.2s, background 0.2s;
+    }
+
+    .roadmap-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .roadmap-card:hover {
+      border-color: var(--accent);
+      background: rgba(0, 212, 255, 0.02);
+    }
+
+    .roadmap-card.completed {
+      border-color: var(--accent);
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    .roadmap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .roadmap-level {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .roadmap-badge {
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    .roadmap-badge.completed {
+      background: rgba(0, 212, 255, 0.2);
+      color: var(--accent);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .roadmap-badge.in-progress {
+      background: rgba(255, 107, 53, 0.2);
+      color: var(--accent2);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+    }
+
+    .roadmap-badge.upcoming {
+      background: rgba(102, 102, 102, 0.2);
+      color: var(--muted);
+      border: 1px solid rgba(102, 102, 102, 0.3);
+    }
+
+    .roadmap-name {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .roadmap-code {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .progress-section {
+      margin-top: 20px;
+    }
+
+    .progress-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+
+    .roadmap-topics {
+      margin-top: 16px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .roadmap-topics strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .roadmap-timeline {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .roadmap-timeline-item {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .roadmap-timeline-item strong {
+      color: var(--accent);
+      min-width: 80px;
+    }
+
     /* CONTACT */
     .contact-grid {
       display: grid;
@@ -578,6 +742,7 @@
     <li><a href="#experiencia">Experiência</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certificações</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -733,6 +898,213 @@
       <div class="cert-org">Amazon Web Services · MLA</div>
     </div>
   </div>
+
+  <!-- ROADMAP -->
+  <div class="roadmap-container" id="roadmap">
+    <h3 class="roadmap-title">Roadmap de Estudos</h3>
+    <div class="roadmap-grid">
+      
+      <!-- AWS Solutions Architect Associate -->
+      <div class="roadmap-card completed">
+        <div class="roadmap-header">
+          <div>
+            <div class="roadmap-level">Nível Associate</div>
+            <div class="roadmap-name">Solutions Architect</div>
+            <div class="roadmap-code">SAA-C03</div>
+          </div>
+          <span class="roadmap-badge completed">✓ Completado</span>
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Progresso</span>
+            <span>100%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="roadmap-topics">
+          <strong>Tópicos principais:</strong>
+          EC2 · VPC · RDS · S3 · Lambda · Auto Scaling · Load Balancing · Security · Disaster Recovery
+        </div>
+        <div class="roadmap-timeline">
+          <div class="roadmap-timeline-item">
+            <strong>Aprovado:</strong> Dez 2024
+          </div>
+          <div class="roadmap-timeline-item">
+            <strong>Validade:</strong> 3 anos
+          </div>
+        </div>
+      </div>
+
+      <!-- AWS Cloud Practitioner -->
+      <div class="roadmap-card completed">
+        <div class="roadmap-header">
+          <div>
+            <div class="roadmap-level">Nível Foundational</div>
+            <div class="roadmap-name">Cloud Practitioner</div>
+            <div class="roadmap-code">CLF-C02</div>
+          </div>
+          <span class="roadmap-badge completed">✓ Completado</span>
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Progresso</span>
+            <span>100%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="roadmap-topics">
+          <strong>Tópicos principais:</strong>
+          Cloud Concepts · AWS Services · Security · Billing · Architecture Principles
+        </div>
+        <div class="roadmap-timeline">
+          <div class="roadmap-timeline-item">
+            <strong>Aprovado:</strong> Ago 2023
+          </div>
+          <div class="roadmap-timeline-item">
+            <strong>Validade:</strong> 3 anos
+          </div>
+        </div>
+      </div>
+
+      <!-- AWS Machine Learning Associate -->
+      <div class="roadmap-card completed">
+        <div class="roadmap-header">
+          <div>
+            <div class="roadmap-level">Nível Associate</div>
+            <div class="roadmap-name">Machine Learning</div>
+            <div class="roadmap-code">MLA-C01</div>
+          </div>
+          <span class="roadmap-badge completed">✓ Completado</span>
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Progresso</span>
+            <span>100%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="roadmap-topics">
+          <strong>Tópicos principais:</strong>
+          SageMaker · ML Fundamentals · Data Preparation · Model Training · Deployment
+        </div>
+        <div class="roadmap-timeline">
+          <div class="roadmap-timeline-item">
+            <strong>Aprovado:</strong> Mar 2024
+          </div>
+          <div class="roadmap-timeline-item">
+            <strong>Validade:</strong> 2 anos
+          </div>
+        </div>
+      </div>
+
+      <!-- AWS Data Analytics Specialist (Em Progresso) -->
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div>
+            <div class="roadmap-level">Nível Specialty</div>
+            <div class="roadmap-name">Data Analytics</div>
+            <div class="roadmap-code">DAS-C01</div>
+          </div>
+          <span class="roadmap-badge in-progress">⏱ Em Progresso</span>
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Progresso</span>
+            <span>65%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 65%"></div>
+          </div>
+        </div>
+        <div class="roadmap-topics">
+          <strong>Tópicos principais:</strong>
+          QuickSight · Redshift · Athena · Glue · Kinesis · Data Ingestion · Analytics
+        </div>
+        <div class="roadmap-timeline">
+          <div class="roadmap-timeline-item">
+            <strong>Início:</strong> Jan 2025
+          </div>
+          <div class="roadmap-timeline-item">
+            <strong>Meta:</strong> Jun 2025
+          </div>
+        </div>
+      </div>
+
+      <!-- AWS Developer Associate (Próximo) -->
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div>
+            <div class="roadmap-level">Nível Associate</div>
+            <div class="roadmap-name">Developer</div>
+            <div class="roadmap-code">DVA-C02</div>
+          </div>
+          <span class="roadmap-badge upcoming">▶ Próximo</span>
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Progresso</span>
+            <span>15%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 15%"></div>
+          </div>
+        </div>
+        <div class="roadmap-topics">
+          <strong>Tópicos principais:</strong>
+          API Gateway · Lambda · DynamoDB · CloudFormation · Monitoring · Deployments
+        </div>
+        <div class="roadmap-timeline">
+          <div class="roadmap-timeline-item">
+            <strong>Início:</strong> Jul 2025
+          </div>
+          <div class="roadmap-timeline-item">
+            <strong>Meta:</strong> Set 2025
+          </div>
+        </div>
+      </div>
+
+      <!-- AWS DevOps Professional (Futuro) -->
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div>
+            <div class="roadmap-level">Nível Professional</div>
+            <div class="roadmap-name">DevOps Engineer</div>
+            <div class="roadmap-code">DOP-C02</div>
+          </div>
+          <span class="roadmap-badge upcoming">◆ Planejado</span>
+        </div>
+        <div class="progress-section">
+          <div class="progress-label">
+            <span>Progresso</span>
+            <span>0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="roadmap-topics">
+          <strong>Tópicos principais:</strong>
+          CI/CD · Automation · Infrastructure · Networking · Performance · Cost Optimization
+        </div>
+        <div class="roadmap-timeline">
+          <div class="roadmap-timeline-item">
+            <strong>Meta:</strong> 2026
+          </div>
+          <div class="roadmap-timeline-item">
+            <strong>Pré-req:</strong> SAA-C03, DVA-C02
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- CONTACT -->
@@ -775,7 +1147,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.timeline-item, .skill-card, .cert-card').forEach((el, i) => {
+  document.querySelectorAll('.timeline-item, .skill-card, .cert-card, .roadmap-card').forEach((el, i) => {
     el.dataset.delay = (i % 4) * 100;
     observer.observe(el);
   });

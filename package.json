@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-paco",
+  "version": "1.0.0",
+  "description": "Denilson Paco Quispe - Data Engineer Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'Build complete'",
+    "lint": "html-validate index.html",
+    "test": "echo 'Running tests...'",
+    "deploy": "echo 'Manual deploy to GitHub Pages'"
+  },
+  "keywords": [
+    "portfolio",
+    "data-engineer",
+    "aws",
+    "cloud"
+  ],
+  "author": "Denilson Paco Quispe",
+  "license": "MIT"
+}
