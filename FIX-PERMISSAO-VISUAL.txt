@@ -1,0 +1,149 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    ✅ ERRO CORRIGIDO!                                        ║
+║                  Permissão do GitHub Actions                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🔴 PROBLEMA
+═══════════════════════════════════════════════════════════════════════════════
+
+Erro na esteira:
+```
+Permission to DenilsonPaco98/portfolio-paco.github.io.git denied to github-actions[bot].
+fatal: unable to access '...': The requested URL returned error: 403
+```
+
+CAUSA: GitHub Actions não tem permissão de escrita para fazer push em `gh-pages`
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ SOLUÇÃO APLICADA
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣ Atualizei o workflow: `.github/workflows/deploy.yml`
+   ✅ Adicionado: `force_orphan: true`
+   ✅ Adicionado: `user_name` e `user_email`
+
+2️⃣ Próximo passo: Configurar permissões no GitHub
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 AGORA VOCÊ PRECISA FAZER ISSO NO GITHUB
+═══════════════════════════════════════════════════════════════════════════════
+
+PASSO 1: Abra seu repositório no GitHub
+┌────────────────────────────────────────────────┐
+│ https://github.com/DenilsonPaco98/             │
+│   portfolio-paco.github.io                     │
+└────────────────────────────────────────────────┘
+
+PASSO 2: Vá para Settings
+┌────────────────────────────────────────────────┐
+│ Repositório → Settings                         │
+└────────────────────────────────────────────────┘
+
+PASSO 3: Procure por "Actions"
+┌────────────────────────────────────────────────┐
+│ Settings → Actions → General                   │
+└────────────────────────────────────────────────┘
+
+PASSO 4: Configure Workflow Permissions
+┌────────────────────────────────────────────────┐
+│ Seção: "Workflow permissions"                  │
+│                                                │
+│ ☑ Read and write permissions                  │
+│ ☑ Allow GitHub Actions to create and          │
+│   approve pull requests                       │
+│                                                │
+│ [Save] ← CLIQUE AQUI!                         │
+└────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 TESTE AGORA
+═══════════════════════════════════════════════════════════════════════════════
+
+Depois que configurar as permissões:
+
+1. Faça um commit pequeno:
+   git add .github/workflows/deploy.yml
+   git commit -m "fix: update gh-pages deployment"
+   git push origin main
+
+2. Vá para: GitHub → Actions → Deploy Portfolio
+
+3. Veja o log rodar e checar se:
+   ✅ Lint HTML passou
+   ✅ Deploy para GitHub Pages passou
+   ✅ Sem erro 403
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📸 IMAGENS DOS PASSOS
+═══════════════════════════════════════════════════════════════════════════════
+
+PASSO 2: Settings
+┌─────────────────────────────────────┐
+│  Repository                         │
+│  ├─ General                         │
+│  ├─ Collaborators                   │
+│  ├─ Branches                        │
+│  ├─ Actions ← CLIQUE AQUI          │
+│  └─ Pages                           │
+└─────────────────────────────────────┘
+
+PASSO 3: Actions → General
+┌─────────────────────────────────────┐
+│  Actions                            │
+│  ├─ General ← VOCÊ ESTÁ AQUI        │
+│  ├─ Runners                         │
+│  └─ Secrets and variables           │
+└─────────────────────────────────────┘
+
+PASSO 4: Workflow permissions
+┌─────────────────────────────────────┐
+│ Workflow permissions:               │
+│                                     │
+│ ⚪ Read repository contents only    │
+│ ⚫ Read and write permissions ✓     │
+│                                     │
+│ ☑ Allow GitHub Actions to create    │
+│   and approve pull requests         │
+│                                     │
+│ [Save changes]                      │
+└─────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚡ RÁPIDO RESUMO
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Arquivo workflow: Já atualizei
+⏳ Permissões GitHub: Você precisa configurar (5 minutos)
+⏳ Testar: Faça novo push
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📖 DOCUMENTAÇÃO COMPLETA
+═══════════════════════════════════════════════════════════════════════════════
+
+Abra: FIX-PERMISSION-ERROR.md
+
+Para outras opções de solução (Deploy Keys, PAT, etc)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ DEPOIS QUE CONFIGURAR
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Seu deploy vai funcionar automático
+2. Nenhum erro 403 mais
+3. Site atualiza em 1-2 minutos após push
+4. Tudo pronto para usar!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 PRÓXIMO PASSO
+
+Vá para GitHub agora e configure as permissões!
+
+═══════════════════════════════════════════════════════════════════════════════
